@@ -4,63 +4,91 @@
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>D3</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<title>VD Lab4</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
+	<link href="css/fonts.css" rel="stylesheet">
+	<style>
+    .municipio {
+      stroke: #fff;
+      stroke-width: 0.8px;
+    }
+	</style>
 </head>
 <body>
 
 	<div class="container">
-
-		<div class="header">
-			<h2>Introdução à D3</h2>
-		</div>
 		<header>
-			<h1>D3</h1>
+			<h1>Semiárido Brasileiro</h1>
 		</header>
 
-		<div class="section">
-
-			<div class="row">
-				<div class="col-sm-4">
-
-					<h3>Referências</h3>
-					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation"><a href="https://github.com/d3/d3/wiki/Gallery" target="_blank">Galeria de exemplos D3</a></li>
-						<li role="presentation"><a href="http://christopheviau.com/d3list/" target="_blank">D3 Big list</a></li>
-						<li role="presentation"><a href="http://www.w3schools.com/graphics/svg_intro.asp" target="_blank">Introdução à SVG</a></li>
-					</ul>
-
-				</div>
-				<div class="col-sm-4">
-
-					<h3>Exemplos básicos</h3>
-					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation"><a href="area.html">Area chart</a></li>
-						<li role="presentation"><a href="bubble.html">Bubble ordinal chart</a></li>
-						<li role="presentation"><a href="bubble2.html">Bubble linear chart</a></li>
-						<li role="presentation"><a href="transition.html">Transitions</a></li>
-					</ul>
-
-				</div>
-				<div class="col-sm-4">
-
-					<h3>Exemplos de mapas</h3>
-					<ul class="nav nav-pills nav-stacked">
-						<li role="presentation"><a href="map.html">Choropleth</a></li>
-						<li role="presentation"><a href="mapb.html">Choropleth + dados externos</a></li>
-					</ul>
-
-				</div>
-			</div>
-
-
-
-		</div>
+		<div id="chart"></div>
 
 	</div>
+
+	<footer></footer>
+
+	<!-- scripts -->
+	<script src="js/d3.v4.min.js"></script>
+	<script src="//d3js.org/d3-color.v1.min.js"></script>
+  	<script src="//d3js.org/topojson.v1.min.js"></script>
+	<script>
+		var
+		    width = 1000,
+		    height = 800;
+
+		var svg = d3.select("#chart")
+				.append("svg")
+				.attr('version', '1.1')
+				.attr('viewBox', '0 0 '+width+' '+height)
+				.attr('width', '100%')
+				.attr('class', 'map-chart');
+
+    var projection = d3.geoAlbers()
+        .center([-40.855833, -7.303889])
+        .rotate([0, 0])
+        .parallels([0, 0])
+        .scale(3000);
+
+    var path = d3.geoPath().projection(projection);
+
+    var color = d3.scaleThreshold();
+
+    d3.json("data/municipios_sab.json", function(error, pb) {
+      if (error) throw error;
+		var municipios = topojson.feature(pb, pb.objects.municipios_sab);
+
+      svg.selectAll(".municipio")
+        .data(municipios.features)
+      .enter().append("path")
+        .attr("id", function(d) { return "municipio_" + d.properties.ID; })
+        .attr("d", path);
+
+      d3.csv("data/municipios_sab.csv", function(error, dados) {
+    	if (error) throw error;
+
+    	color
+      	.domain([200, 400, 700, 1000, 2000])
+        // Purple
+    		.range([d3.rgb(84, 39, 143, 0.2), d3.rgb(84, 39, 143, 0.4), d3.rgb(84, 39, 143, 0.6), d3.rgb(84, 39, 143, 0.8), d3.rgb(84, 39, 143, 1)]);
+
+    	
+    	for (var i in dados) {
+    		var municipio = dados[i];
+    		if (municipio.GEOCODIGO) {
+    			svg.select("#municipio_"+municipio.GEOCODIGO)
+					.attr("fill", color(+municipio.AREA_KM2));
+    		}
+    	};
+    })
+    });
+
+    
+		</script>
 
 </body>
 </html>
