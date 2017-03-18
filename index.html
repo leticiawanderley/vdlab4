@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/sa.png" type="image/x-icon">
 	<title>VD Lab4</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab" rel="stylesheet">
@@ -38,8 +38,8 @@
   	<script src="//d3js.org/topojson.v1.min.js"></script>
 	<script>
 		var
-		    width = 1000,
-		    height = 800;
+		    width = 800,
+		    height = 600;
 
 		var svg = d3.select("#chart")
 				.append("svg")
@@ -49,10 +49,10 @@
 				.attr('class', 'map-chart');
 
     var projection = d3.geoAlbers()
-        .center([-40.855833, -7.303889])
+        .center([-38.855833, -9.303889])
         .rotate([0, 0])
         .parallels([0, 0])
-        .scale(3000);
+        .scale(2000);
 
     var path = d3.geoPath().projection(projection);
 
