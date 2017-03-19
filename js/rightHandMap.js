@@ -6,7 +6,8 @@ var svg2 = d3.select("#chart2")
 	.append("svg")
 	.attr('version', '1.1')
 	.attr('viewBox', '0 0 '+width+' '+height)
-	.attr('width', '100%');
+	.attr('width', '100%')
+  .attr('class', 'map-chart');
 
 var projection = d3.geoAlbers()
   .center([-50.855833, -10.303889])

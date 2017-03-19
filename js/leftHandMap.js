@@ -10,7 +10,7 @@ var svg = d3.select("#chart")
 	.attr('class', 'map-chart');
 
 var projection = d3.geoAlbers()
-  .center([-30.855833, -10.303889])
+  .center([-29.855833, -10.303889])
   .rotate([0, 0])
   .parallels([0, 0])
   .scale(1500);
