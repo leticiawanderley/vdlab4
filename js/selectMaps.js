@@ -9,7 +9,7 @@ function showPopulacaoAtendida() {
     if (error) throw error;
 
     color
-      .domain([100, 3000, 7000, 14000, 900000])
+      .domain([100, 3000, 7000, 14000, 600000])
       .range([d3.rgb(38, 143, 156, 0.2), d3.rgb(38, 143, 156, 0.4), d3.rgb(38, 143, 156, 0.6), d3.rgb(38, 143, 156, 0.8), d3.rgb(38, 143, 156, 1)]);
 
     for (var i in dados) {
@@ -39,7 +39,7 @@ function showPopulacaoUrbanaAtendida() {
     if (error) throw error;
 
     color
-      .domain([100, 3000, 7000, 14000, 900000])
+      .domain([0, 2000, 5000, 11000, 600000])
       .range([d3.rgb(38, 143, 156, 0.2), d3.rgb(38, 143, 156, 0.4), d3.rgb(38, 143, 156, 0.6), d3.rgb(38, 143, 156, 0.8), d3.rgb(38, 143, 156, 1)]);
 
     for (var i in dados) {
@@ -69,7 +69,7 @@ function showPopulacaoTotal() {
     if (error) throw error;
 
     color
-      .domain([100, 3000, 7000, 14000, 900000])
+      .domain([1000, 6000, 12000, 22000, 6000000])
       .range([d3.rgb(222, 100, 21, 0.2), d3.rgb(222, 100, 21, 0.4), d3.rgb(222, 100, 21, 0.6), d3.rgb(222, 100, 21, 0.8), d3.rgb(222, 100, 21, 1)]);
 
     for (var i in dados) {
@@ -99,7 +99,7 @@ function showPopulacaoUrbana() {
     if (error) throw error;
 
     color
-      .domain([100, 3000, 7000, 14000, 900000])
+      .domain([200, 3000, 6000, 11000, 600000])
       .range([d3.rgb(222, 100, 21, 0.2), d3.rgb(222, 100, 21, 0.4), d3.rgb(222, 100, 21, 0.6), d3.rgb(222, 100, 21, 0.8), d3.rgb(222, 100, 21, 1)]);
 
     for (var i in dados) {
