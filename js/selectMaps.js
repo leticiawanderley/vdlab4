@@ -69,7 +69,7 @@ function showPopulacaoTotal() {
     if (error) throw error;
 
     color
-      .domain([1000, 6000, 12000, 22000, 6000000])
+      .domain([1000, 6000, 12000, 22000, 600000])
       .range([d3.rgb(222, 100, 21, 0.2), d3.rgb(222, 100, 21, 0.4), d3.rgb(222, 100, 21, 0.6), d3.rgb(222, 100, 21, 0.8), d3.rgb(222, 100, 21, 1)]);
 
     for (var i in dados) {
@@ -85,7 +85,7 @@ function showPopulacaoTotal() {
         }
       }
     };
-  })
+  });
 }
 
 function showPopulacaoUrbana() {
