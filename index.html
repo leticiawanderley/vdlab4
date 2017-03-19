@@ -30,8 +30,20 @@
 			<h1>Semiárido Brasileiro</h1>
 		</header>
     <div class="row charts">
-      <div id="chart" class="col col-lg-6 col-md-6 col-sm-6"></div>
-      <div id="chart2" class="col col-lg-6 col-md-6 col-sm-6"></div>
+      <div class="col col-lg-6 col-md-6 col-sm-6">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary popButton" onclick="showPopulacaoTotal()">População total</button>
+          <button type="button" class="btn btn-primary popButton" onclick="showPopulacaoUrbana()">População urbana</button>
+        </div>
+        <div id="chart"></div>
+      </div>
+      <div class="col col-lg-6 col-md-6 col-sm-6">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary abstButton" onclick="showPopulacaoAtendida()">População total abastecida por água</button>
+          <button type="button" class="btn btn-primary abstButton" onclick="showPopulacaoUrbanaAtendida()">População urbana abastecida por água</button>
+        </div>
+        <div id="chart2"></div>
+      </div>
     </div>
 	</div>
 
@@ -41,6 +53,7 @@
 	<script src="js/d3.v4.min.js"></script>
 	<script src="//d3js.org/d3-color.v1.min.js"></script>
   <script src="//d3js.org/topojson.v1.min.js"></script>
+  <script src="js/selectMaps.js"></script>
 	<script src="js/rightHandMap.js"></script>
   <script src="js/leftHandMap.js"></script>
 </body>
