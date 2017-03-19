@@ -49,7 +49,7 @@ d3.json("data/municipios_sab.json", function(error, pb) {
 
       color
         .domain([100, 3000, 7000, 14000, 900000])
-        .range([d3.rgb(84, 39, 143, 0.2), d3.rgb(84, 39, 143, 0.4), d3.rgb(84, 39, 143, 0.6), d3.rgb(84, 39, 143, 0.8), d3.rgb(84, 39, 143, 1)]);
+        .range([d3.rgb(144, 12, 63, 0.2), d3.rgb(144, 12, 63, 0.4), d3.rgb(144, 12, 63, 0.6), d3.rgb(144, 12, 63, 0.8), d3.rgb(144, 12, 63, 1)]);
 
       for (var i in dados) {
         var municipio = dados[i];
