@@ -64,7 +64,7 @@ function showPopulacaoTotal() {
 
     color
       .domain([100, 3000, 7000, 14000, 900000])
-      .range([d3.rgb(144, 12, 63, 0.2), d3.rgb(144, 12, 63, 0.4), d3.rgb(144, 12, 63, 0.6), d3.rgb(144, 12, 63, 0.8), d3.rgb(144, 12, 63, 1)]);
+      .range([d3.rgb(222, 100, 21, 0.2), d3.rgb(222, 100, 21, 0.4), d3.rgb(222, 100, 21, 0.6), d3.rgb(222, 100, 21, 0.8), d3.rgb(222, 100, 21, 1)]);
 
     for (var i in dados) {
       var municipio = dados[i];
@@ -92,7 +92,7 @@ function showPopulacaoUrbana() {
 
     color
       .domain([100, 3000, 7000, 14000, 900000])
-      .range([d3.rgb(144, 12, 63, 0.2), d3.rgb(144, 12, 63, 0.4), d3.rgb(144, 12, 63, 0.6), d3.rgb(144, 12, 63, 0.8), d3.rgb(144, 12, 63, 1)]);
+      .range([d3.rgb(222, 100, 21, 0.2), d3.rgb(222, 100, 21, 0.4), d3.rgb(222, 100, 21, 0.6), d3.rgb(222, 100, 21, 0.8), d3.rgb(222, 100, 21, 1)]);
 
     for (var i in dados) {
       var municipio = dados[i];

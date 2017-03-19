@@ -78,7 +78,7 @@ footer {
 }
 
 .popButton {
-  background-color: rgba(144, 12, 63, 0.3);
+  background-color: rgba(222, 100, 21, 0.3);
   border-radius: 0px;
   border: 0px;
 }
@@ -88,7 +88,7 @@ footer {
 .popButton:focus,
 .popButton::selection,
 .popButton:target {
-  background-color: rgba(144, 12, 63, 0.9);
+  background-color: rgba(222, 100, 21, 0.9);
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
