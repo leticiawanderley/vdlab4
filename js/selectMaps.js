@@ -1,4 +1,6 @@
 function showPopulacaoAtendida() {
+  document.getElementById("abstTotal").className += " abstButtonSel";
+  document.getElementById("abstUrbana").className = document.getElementById("abstUrbana").className.replace(' abstButtonSel', '');
   var color = d3.scaleThreshold();
   var no_data = d3.rgb(190, 190, 200, 0.9);
   var svg = d3.select("#chart2");
@@ -27,6 +29,8 @@ function showPopulacaoAtendida() {
 }
 
 function showPopulacaoUrbanaAtendida() {
+  document.getElementById("abstUrbana").className += " abstButtonSel";
+  document.getElementById("abstTotal").className = document.getElementById("abstTotal").className.replace(' abstButtonSel', '');
   var color = d3.scaleThreshold();
   var no_data = d3.rgb(190, 190, 200, 0.9);
   var svg = d3.select("#chart2");
@@ -55,6 +59,8 @@ function showPopulacaoUrbanaAtendida() {
 }
 
 function showPopulacaoTotal() {
+  document.getElementById("popTotal").className += " popButtonSel";
+  document.getElementById("popUrbana").className = document.getElementById("popUrbana").className.replace(' popButtonSel', '');
   var color = d3.scaleThreshold();
   var no_data = d3.rgb(190, 190, 200, 0.9);
   var svg = d3.select("#chart");
@@ -83,6 +89,8 @@ function showPopulacaoTotal() {
 }
 
 function showPopulacaoUrbana() {
+  document.getElementById("popUrbana").className += " popButtonSel";
+  document.getElementById("popTotal").className = document.getElementById("popTotal").className.replace(' popButtonSel', '');
   var color = d3.scaleThreshold();
   var no_data = d3.rgb(190, 190, 200, 0.9);
   var svg = d3.select("#chart");

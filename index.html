@@ -32,15 +32,15 @@
     <div class="row charts">
       <div class="col col-lg-6 col-md-6 col-sm-6">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary popButton" onclick="showPopulacaoTotal()">População total</button>
-          <button type="button" class="btn btn-primary popButton" onclick="showPopulacaoUrbana()">População urbana</button>
+          <button type="button" id="popTotal" class="btn btn-primary popButton" onclick="showPopulacaoTotal()">População total</button>
+          <button type="button" id="popUrbana" class="btn btn-primary popButton" onclick="showPopulacaoUrbana()">População urbana</button>
         </div>
         <div id="chart"></div>
       </div>
       <div class="col col-lg-6 col-md-6 col-sm-6">
         <div class="btn-group">
-          <button type="button" class="btn btn-primary abstButton" onclick="showPopulacaoAtendida()">População total abastecida por água</button>
-          <button type="button" class="btn btn-primary abstButton" onclick="showPopulacaoUrbanaAtendida()">População urbana abastecida por água</button>
+          <button type="button" id="abstTotal" class="btn btn-primary abstButton" onclick="showPopulacaoAtendida()">População total abastecida por água</button>
+          <button type="button" id="abstUrbana" class="btn btn-primary abstButton" onclick="showPopulacaoUrbanaAtendida()">População urbana abastecida por água</button>
         </div>
         <div id="chart2"></div>
       </div>
